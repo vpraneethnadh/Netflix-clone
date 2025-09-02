@@ -1,47 +1,92 @@
-# Netflix Clone 🎬  
+# 🎬 Netflix Clone
 
-👉 **Live Demo:** [https://netflix-iota-pearl.vercel.app/](https://netflix-iota-pearl.vercel.app/)  
+**Live Demo:** https://netflix-iota-pearl.vercel.app/
 
-This is a **Netflix Clone** built from scratch using **React + Vite**. It includes user authentication with Firebase, movie data fetched from **TMDB API**, and a clean, responsive UI.  
-
----
-
-## 🚀 Features  
-- 🔥 Built with **React (Vite)** for fast performance  
-- 🔑 **Firebase Authentication** (Login & Signup)  
-- 🎥 **TMDB API integration** for fetching movies & TV shows  
-- 🎭 Netflix-like UI with banners, categories & search  
-- ✅ Toast notifications with **react-toastify**  
+A responsive **Netflix-style** frontend built with **React + Vite**, using **Firebase Authentication** and **TMDB** for movie data. Clean UI, banner carousels, categories, search, and toast notifications.
 
 ---
 
-## 📦 Installation & Setup  
+## 🔥 Features
+- **React (Vite)** for fast development & performance  
+- **Firebase Authentication** (Email / Password)  
+- **TMDB API** integration for movies & TV data  
+- Netflix-like UI: banners, category rows, search & player  
+- Toast notifications using **react-toastify**  
+- Responsive design (desktop & mobile)
 
-### 1. Clone the Repository  
+---
+
+## 📚 Table of Contents
+1. [Demo](#-demo)  
+2. [Tech Stack](#-tech-stack)  
+3. [Project Structure](#-project-structure)  
+4. [Installation](#-installation)  
+5. [Firebase Setup](#-firebase-setup)  
+6. [TMDB Setup](#-tmdb-setup)  
+7. [Environment Variables](#-environment-variables)  
+8. [Run Locally](#-run-locally)  
+9. [Deployment](#-deployment)  
+10. [Screenshots](#-screenshots)  
+11. [Contributing](#-contributing)  
+12. [License](#-license)
+
+---
+
+## 🎯 Demo
+Open the live demo: **https://netflix-iota-pearl.vercel.app/**
+
+---
+
+## 🧰 Tech Stack
+- **React** (Vite)  
+- **Firebase** (Auth)  
+- **The Movie Database (TMDB) API**  
+- **react-router-dom**, **react-firebase-hooks**, **react-toastify**
+
+---
+
+## 📂 Project Structure
+src/
+┣ assets/ # Images & icons
+┣ Components/ # Navbar, Footer, TitleCards, etc.
+┣ Pages/ # Home, Player, Login, Signup
+┣ firebase.js # Firebase config
+┣ App.jsx
+┗ main.jsx
+
+yaml
+Copy code
+
+---
+
+## ⚙️ Installation
+
+### 1. Clone the repo
 ```bash
 git clone https://github.com/your-username/netflix-clone.git
 cd netflix-clone
-2. Install Dependencies
-Make sure you have Node.js installed, then run:
+2. Install dependencies
+Make sure Node.js is installed, then:
 
 bash
 Copy code
 npm install
-Additional packages used:
-
+# or
+yarn
+3. Install additional packages (if needed)
 bash
 Copy code
 npm install react-router-dom firebase react-firebase-hooks react-toastify
-3. Firebase Setup
-Go to Firebase Console
+🔐 Firebase Setup
+Go to the Firebase Console.
 
-Create a new project
+Create a new project.
 
-Enable Authentication (Email/Password)
+Navigate to Authentication → Get started and enable Email/Password.
 
-Copy your Firebase config and paste it into src/firebase.js
+Create a web app in Firebase and copy the config values.
 
-firebase.js should look like this:
+Create src/firebase.js and paste your config:
 
 javascript
 Copy code
@@ -59,50 +104,81 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
-📌 Docs: Firebase Web Setup Guide
+🎬 TMDB API Setup
+Create an account on The Movie Database: https://www.themoviedb.org/
 
-4. TMDB API Setup
-Create an account on The Movie Database (TMDB)
+Go to Settings → API and generate an API key.
 
-Go to API Section and generate an API key
+Add your TMDB API key to the project as an environment variable (see next section).
 
-Update your API key in src/Pages/Pages.jsx
-
-Example:
+In the project code (e.g. src/Pages/Pages.jsx) set:
 
 javascript
 Copy code
-const API_KEY = "YOUR_TMDB_API_KEY";
-▶️ Running the Project
-Start the development server:
+const API_KEY = process.env.VITE_TMDB_API_KEY;
+🔒 Environment Variables
+Create a .env (or .env.local) at project root:
+
+ini
+Copy code
+VITE_TMDB_API_KEY=your_tmdb_api_key
+VITE_FIREBASE_API_KEY=your_firebase_api_key
+VITE_FIREBASE_AUTH_DOMAIN=your_project.firebaseapp.com
+VITE_FIREBASE_PROJECT_ID=your_project_id
+VITE_FIREBASE_STORAGE_BUCKET=your_project.appspot.com
+VITE_FIREBASE_MESSAGING_SENDER_ID=your_sender_id
+VITE_FIREBASE_APP_ID=your_app_id
+Note: Vite prefixes env vars with VITE_ so they are accessible in the client code.
+
+▶️ Run Locally
+Start the dev server:
 
 bash
 Copy code
 npm run dev
-Now open http://localhost:5173 in your browser.
+Open: http://localhost:5173
 
-📂 Project Structure
+Build for production:
+
 bash
 Copy code
-src/
- ┣ assets/         # Images & icons
- ┣ Components/     # Navbar, Footer, TitleCards, etc.
- ┣ Pages/          # Home, Player, Login, Signup
- ┣ firebase.js     # Firebase config
- ┣ App.jsx
- ┗ main.jsx
-🌍 Deployment
-You can deploy this project easily on Vercel or Netlify.
+npm run build
+Preview production build:
 
-⚡ Technologies Used
-React + Vite
+bash
+Copy code
+npm run preview
+🚀 Deployment
+This project works great on Vercel or Netlify.
 
-Firebase (Authentication)
+Vercel quick steps:
 
-TMDB API
+Push repo to GitHub.
 
-React Router DOM
+Import project in Vercel.
 
-React Firebase Hooks
+Add environment variables in Vercel dashboard (same keys as .env).
 
-React Toastify
+Deploy.
+
+🖼️ Screenshots
+Add a couple of screenshots here for the README (optional).
+Example:
+
+scss
+Copy code
+![Home Banner](./assets/home-banner.png)
+![Category Row](./assets/category-row.png)
+🤝 Contributing
+Contributions are welcome!
+
+Fork the repo
+
+Create a feature branch: git checkout -b feature/YourFeature
+
+Commit changes: git commit -m "Add feature"
+
+Push and open a PR
+
+📜 License
+This project is open source — feel free to adapt it for learning or personal projects. Add a license file (e.g., MIT) if you want to clarify reuse rules.
