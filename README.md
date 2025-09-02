@@ -46,6 +46,7 @@ Open the live demo: **https://netflix-iota-pearl.vercel.app/**
 ---
 
 ## 📂 Project Structure
+```yaml
 src/
 ├─ assets/ # Images & icons
 ├─ Components/ # Navbar, Footer, TitleCards, etc.
@@ -54,9 +55,7 @@ src/
 ├─ App.jsx
 └─ main.jsx
 
-yaml
-Copy code
-
+```
 ---
 
 ## ⚙️ Installation
@@ -70,7 +69,6 @@ cd netflix-clone
 Make sure Node.js is installed, then run:
 
 ```bash
-Copy code
 npm install
 ```
 
@@ -78,7 +76,6 @@ npm install
 If not already included, install these:
 
 ```bash
-Copy code
 npm install react-router-dom firebase react-firebase-hooks react-toastify
 ```
 
@@ -94,7 +91,6 @@ Add a new Web App and copy the Firebase config.
 Create src/firebase.js and paste your config:
 
 ```javascript
-Copy code
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 
@@ -121,14 +117,12 @@ Store the key in your environment variables (see next section).
 In your code (example src/Pages/Pages.jsx) access it like:
 
 ```javascript
-Copy code
 const API_KEY = import.meta.env.VITE_TMDB_API_KEY;
 // or process.env.VITE_TMDB_API_KEY depending on setup
 🔒 Environment Variables
 Create a .env or .env.local file at the project root:
 
 env
-Copy code
 VITE_TMDB_API_KEY=your_tmdb_api_key
 
 # Firebase
@@ -146,7 +140,6 @@ Note: Vite requires client-facing env vars to start with VITE_.
 Start the dev server:
 
 ```bash
-Copy code
 npm run dev
 ```
 Open in browser: http://localhost:5173
@@ -154,46 +147,14 @@ Open in browser: http://localhost:5173
 Build for production:
 
 ```bash
-Copy code
 npm run build
 ```
 Preview production build:
 
 
 ```bash
-Copy code
 npm run preview
 ```
-
-##🚀 Deployment (Vercel / Netlify)
-Vercel quick steps
-
-Push repo to GitHub.
-
-Import project in Vercel.
-
-Add environment variables in the Vercel dashboard (same keys as .env).
-
-Deploy.
-
-Netlify quick steps
-
-Push repo to GitHub.
-
-Connect repo in Netlify.
-
-Add env vars (Site Settings → Build & deploy → Environment).
-
-Deploy with the build command npm run build and publish directory dist.
-
-markdown
-```Copy code
-![Home Banner](./src/assets/home-banner.png)
-![Category Row](./src/assets/category-row.png)
-Tip: Use images ~1280×720 for banner/screenshots to keep the README tidy.
-```
-🤝 Contributing
-Fork the repo
 
 Create a feature branch: git checkout -b feature/YourFeature
 
