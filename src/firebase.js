@@ -10,13 +10,13 @@ import { addDoc, collection, getFirestore } from "firebase/firestore";
 import { toast } from "react-toastify";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCginwlkRjec3ESnMUQXXl88eVuq04uksM",
-  authDomain: "netflix-clone-ef089.firebaseapp.com",
-  projectId: "netflix-clone-ef089",
-  storageBucket: "netflix-clone-ef089.firebasestorage.app",
-  messagingSenderId: "749805278283",
-  appId: "1:749805278283:web:9f4b58b7dbdc015f83e9ce",
-  measurementId: "G-FYHLJPBM4G"
+  apiKey: "XXXXXXXXXXXXXXXXXXXXXXXX",
+  authDomain: "XXXXXXXXXXXXXXXXXXXXXXXXX",
+  projectId: "XXXXXXXXXXXXXXXXXXXXXXX",
+  storageBucket: "XXXXXXXXXXXXXXXXX",
+  messagingSenderId: "XXXXXXXXXXXXXXXXX",
+  appId: "XXXXXXXXXXXXXXXXXXXXXXXXXX",
+  measurementId: "XXXXXXXXXXXXXXXXXXX"
 };
 
 const app = initializeApp(firebaseConfig);
@@ -54,3 +54,4 @@ const logout = async () => {
 };
 
 export { auth, db, login, signup, logout };
+
