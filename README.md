@@ -47,12 +47,12 @@ Open the live demo: **https://netflix-iota-pearl.vercel.app/**
 
 ## 📂 Project Structure
 src/
-┣ assets/ # Images & icons
-┣ Components/ # Navbar, Footer, TitleCards, etc.
-┣ Pages/ # Home, Player, Login, Signup
-┣ firebase.js # Firebase config
-┣ App.jsx
-┗ main.jsx
+├─ assets/ # Images & icons
+├─ Components/ # Navbar, Footer, TitleCards, etc.
+├─ Pages/ # Home, Player, Login, Signup
+├─ firebase.js # Firebase config
+├─ App.jsx
+└─ main.jsx
 
 yaml
 Copy code
@@ -61,34 +61,39 @@ Copy code
 
 ## ⚙️ Installation
 
-### 1. Clone the repo
+1. Clone the repo
 ```bash
 git clone https://github.com/your-username/netflix-clone.git
 cd netflix-clone
+```
 2. Install dependencies
-Make sure Node.js is installed, then:
+Make sure Node.js is installed, then run:
 
-bash
+```bash
 Copy code
 npm install
-# or
-yarn
-3. Install additional packages (if needed)
-bash
+```
+
+3. Additional packages
+If not already included, install these:
+
+```bash
 Copy code
 npm install react-router-dom firebase react-firebase-hooks react-toastify
-🔐 Firebase Setup
+```
+
+## 🔐 Firebase Setup
 Go to the Firebase Console.
 
 Create a new project.
 
-Navigate to Authentication → Get started and enable Email/Password.
+In the project dashboard go to Authentication → Get started and enable Email/Password.
 
-Create a web app in Firebase and copy the config values.
+Add a new Web App and copy the Firebase config.
 
 Create src/firebase.js and paste your config:
 
-javascript
+```javascript
 Copy code
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
@@ -104,81 +109,94 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
-🎬 TMDB API Setup
-Create an account on The Movie Database: https://www.themoviedb.org/
+```
+
+##🎬 TMDB API Setup
+Create an account on The Movie Database (TMDB): https://www.themoviedb.org/
 
 Go to Settings → API and generate an API key.
 
-Add your TMDB API key to the project as an environment variable (see next section).
+Store the key in your environment variables (see next section).
 
-In the project code (e.g. src/Pages/Pages.jsx) set:
+In your code (example src/Pages/Pages.jsx) access it like:
 
-javascript
+```javascript
 Copy code
-const API_KEY = process.env.VITE_TMDB_API_KEY;
+const API_KEY = import.meta.env.VITE_TMDB_API_KEY;
+// or process.env.VITE_TMDB_API_KEY depending on setup
 🔒 Environment Variables
-Create a .env (or .env.local) at project root:
+Create a .env or .env.local file at the project root:
 
-ini
+env
 Copy code
 VITE_TMDB_API_KEY=your_tmdb_api_key
+
+# Firebase
 VITE_FIREBASE_API_KEY=your_firebase_api_key
 VITE_FIREBASE_AUTH_DOMAIN=your_project.firebaseapp.com
 VITE_FIREBASE_PROJECT_ID=your_project_id
 VITE_FIREBASE_STORAGE_BUCKET=your_project.appspot.com
 VITE_FIREBASE_MESSAGING_SENDER_ID=your_sender_id
 VITE_FIREBASE_APP_ID=your_app_id
-Note: Vite prefixes env vars with VITE_ so they are accessible in the client code.
+```
+
+Note: Vite requires client-facing env vars to start with VITE_.
 
 ▶️ Run Locally
 Start the dev server:
 
-bash
+```bash
 Copy code
 npm run dev
-Open: http://localhost:5173
+```
+Open in browser: http://localhost:5173
 
 Build for production:
 
-bash
+```bash
 Copy code
 npm run build
+```
 Preview production build:
 
-bash
+
+```bash
 Copy code
 npm run preview
-🚀 Deployment
-This project works great on Vercel or Netlify.
+```
 
-Vercel quick steps:
+##🚀 Deployment (Vercel / Netlify)
+Vercel quick steps
 
 Push repo to GitHub.
 
 Import project in Vercel.
 
-Add environment variables in Vercel dashboard (same keys as .env).
+Add environment variables in the Vercel dashboard (same keys as .env).
 
 Deploy.
 
-🖼️ Screenshots
-Add a couple of screenshots here for the README (optional).
-Example:
+Netlify quick steps
 
-scss
-Copy code
-![Home Banner](./assets/home-banner.png)
-![Category Row](./assets/category-row.png)
+Push repo to GitHub.
+
+Connect repo in Netlify.
+
+Add env vars (Site Settings → Build & deploy → Environment).
+
+Deploy with the build command npm run build and publish directory dist.
+
+markdown
+```Copy code
+![Home Banner](./src/assets/home-banner.png)
+![Category Row](./src/assets/category-row.png)
+Tip: Use images ~1280×720 for banner/screenshots to keep the README tidy.
+```
 🤝 Contributing
-Contributions are welcome!
-
 Fork the repo
 
 Create a feature branch: git checkout -b feature/YourFeature
 
-Commit changes: git commit -m "Add feature"
+Commit your changes: git commit -m "Add feature"
 
-Push and open a PR
-
-📜 License
-This project is open source — feel free to adapt it for learning or personal projects. Add a license file (e.g., MIT) if you want to clarify reuse rules.
+Push and open a Pull Request
