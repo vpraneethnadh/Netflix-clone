@@ -25,10 +25,6 @@ A responsive **Netflix-style** frontend built with **React + Vite**, using **Fir
 6. [TMDB Setup](#-tmdb-setup)  
 7. [Environment Variables](#-environment-variables)  
 8. [Run Locally](#-run-locally)  
-9. [Deployment](#-deployment)  
-10. [Screenshots](#-screenshots)  
-11. [Contributing](#-contributing)  
-12. [License](#-license)
 
 ---
 
