@@ -1,6 +1,6 @@
 # 🎬 Netflix Clone
 
-**Live Demo:** https://netflix-iota-pearl.vercel.app/
+**Live Demo:** [Click Here!](https://netflix-delta-lime-46.vercel.app/)
 
 A responsive **Netflix-style** frontend built with **React + Vite**, using **Firebase Authentication** and **TMDB** for movie data. Clean UI, banner carousels, categories, search, and toast notifications.
 
