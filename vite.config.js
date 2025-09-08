@@ -5,7 +5,7 @@ import topLevelAwait from 'vite-plugin-top-level-await'
 
 export default defineConfig({
   plugins: [react(), wasm(), topLevelAwait()],
-  base: './',
+  base: '/',
   optimizeDeps: {
     exclude: ["sql.js/react"],
     esbuildOptions: {
